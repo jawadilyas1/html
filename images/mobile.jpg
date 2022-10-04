@@ -1,0 +1,2237 @@
+
+<!DOCTYPE html>
+<html lang="en-US" data-woostify-version="1.9.8">
+	<head>		<meta charset="UTF-8">
+		<style id='spoki-style-buttons'>.spoki-button-relative * {
+    box-sizing: border-box;
+}
+
+.spoki-button-relative {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 4px 0;
+    overflow: hidden;
+}
+
+.spoki-button-relative > .spoki-button {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #23D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    line-height: 100%;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+.spoki-button-relative > .spoki-button .spoki-wa-icon {
+    margin: 0 6px 0 0;
+}
+
+.spoki-button-relative > .spoki-button:hover {
+    opacity: 0.9;
+    background-color: #23D366;
+}
+
+.spoki-button-relative > .spoki-button svg {
+    position: relative;
+    min-height: unset;
+    height: 12px;
+}
+
+.spoki-button-relative > .spoki-button svg + span {
+    margin-left: 6px;
+}
+
+.spoki-button-relative > .spoki-button span {
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 100%;
+}
+
+.spoki-button-relative > .spoki-button.size-1 {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+.spoki-button-relative > .spoki-button.size-1 svg {
+    height: 12px;
+}
+
+.spoki-button-relative > .spoki-button.size-2, .spoki-button-relative > .spoki-button.size-4 {
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 16px;
+}
+
+.spoki-button-relative > .spoki-button.size-2 svg, .spoki-button-relative > .spoki-button.size-4 svg {
+    height: 16px;
+    width: auto;
+}
+
+.spoki-button-relative > .spoki-button.size-3 {
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 24px;
+}
+
+.spoki-button-relative > .spoki-button.size-3 svg {
+    height: 18px;
+}
+
+.spoki-button-relative > .spoki-button.size-4 {
+    width: 100%;
+}
+
+#spoki-fixed-btn {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 24px;
+    z-index: 9999;
+}
+
+#spoki-fixed-btn #spoki-chat-link {
+    display: flex;
+    background-color: #23D366;
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    text-decoration: none !important;
+}
+
+#spoki-fixed-btn #spoki-chat-link:hover {
+    opacity: 0.9;
+}
+
+#spoki-fixed-btn svg {
+    width: auto;
+    height: auto;
+    max-width: 65%;
+    max-height: 65%;
+}
+
+.spoki-fixed-btn-label {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    background-color: white;
+    width: max-content;
+    max-width: 60vw;
+    box-shadow: #00122e2e 0 1px 50px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.spoki-fixed-btn-label img {
+    max-height: 16px;
+    max-width: 16px;
+    object-fit: contain;
+}
+.spoki-fixed-btn-label.hide-not-hover {
+    display: none;
+}
+
+#spoki-fixed-btn:active .spoki-fixed-btn-label.hide-not-hover,
+#spoki-fixed-btn:focus .spoki-fixed-btn-label.hide-not-hover,
+#spoki-fixed-btn:hover .spoki-fixed-btn-label.hide-not-hover {
+    display: block;
+}
+
+.spoki-fixed-btn-popup {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background-color: #f44336;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 10px;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 1;
+}
+
+#spoki-chat-preview {
+    position: absolute;
+    right: 0;
+    bottom: 52px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background-color: white;
+    width: 300px;
+    max-width: 80vw;
+    height: auto;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    z-index: 999999999;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.25s ease, opacity 0.25s;
+
+}
+
+#spoki-chat-preview.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s ease, opacity 0.25s;
+}
+
+#spoki-chat-preview .spoki-chat-preview-chat-message {
+    background-color: white;
+    border-radius: 0 12px 12px 12px;
+    padding: 8px 12px;
+    position: relative;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-bottom: 50px;
+    max-width: 80%;
+    width: max-content;
+    border: 1px solid #EFEFEF;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, .8);
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+#spoki-chat-preview #spoki-chat-preview-footer {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 8px 8px 16px;
+    flex: 1;
+    width: 100%;
+    background-color: #EFEFEF;
+    box-sizing: border-box;
+}
+
+#spoki-chat-preview #spoki-chat-preview-footer form {
+    display: inherit;
+    width: 100%;
+}
+
+#spoki-chat-preview #spoki-chat-preview-footer #spoki-chat-preview-message {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 4px 16px;
+    color: rgba(0, 0, 0, .8);
+    border-radius: 16px;
+    outline: none !important;
+    margin-right: 8px;
+}
+
+#spoki-chat-preview #spoki-chat-preview-footer #spoki-chat-preview-send {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    color: #7C8083;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    outline: unset !important;
+}
+
+#spoki-chat-preview #spoki-chat-preview-footer #spoki-chat-preview-send:hover,
+#spoki-chat-preview #spoki-chat-preview-footer #spoki-chat-preview-send:active,
+#spoki-chat-preview #spoki-chat-preview-footer #spoki-chat-preview-send:focus {
+    opacity: 0.8;
+}
+
+#spoki-chat-preview:not(.hidden) ~ #spoki-chat-link svg {
+    display: none;
+}
+
+#spoki-chat-preview:not(.hidden) ~ .spoki-fixed-btn-label,
+#spoki-chat-preview:not(.hidden) ~ .spoki-fixed-btn-popup {
+    display: none;
+}
+
+#spoki-chat-preview:not(.hidden) ~ #spoki-chat-link:before {
+    content: 'X';
+    color: white !important;
+    font-size: 18px;
+}
+
+@media (max-width: 575px) {
+    #spoki-fixed-btn.hidden-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    #spoki-fixed-btn.hidden-tablet {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    #spoki-fixed-btn.hidden-desktop {
+        display: none !important;
+    }
+}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script>window._wca = window._wca || [];</script>
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v17.2 (Yoast SEO v19.2) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>SAY MY NAME MOBILE BACK COVER - Oh Yes</title>
+	<link rel="canonical" href="https://sayyes.pk/product/say-my-name-mobile-back-cover/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="SAY MY NAME MOBILE BACK COVER" />
+	<meta property="og:description" content="Note: Mention your cellphone Model (Samsung, Huawei, Infinix, Oppo, Realme, Apple Phone, Nokia) in the note  Mobile Cover Specification:  Silicon Case with Premium Quality. Digital Printing Customization available" />
+	<meta property="og:url" content="https://sayyes.pk/product/say-my-name-mobile-back-cover/" />
+	<meta property="og:site_name" content="Oh Yes" />
+	<meta property="article:modified_time" content="2021-11-29T08:13:54+00:00" />
+	<meta property="og:image" content="https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg" />
+	<meta property="og:image:width" content="960" />
+	<meta property="og:image:height" content="960" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Hamza Ali" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://sayyes.pk/#website","url":"https://sayyes.pk/","name":"Oh Yes","description":"Say Yes to DISCOUNT!","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://sayyes.pk/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://sayyes.pk/product/say-my-name-mobile-back-cover/#primaryimage","url":"https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg","contentUrl":"https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg","width":960,"height":960,"caption":"SAY MY NAME"},{"@type":"WebPage","@id":"https://sayyes.pk/product/say-my-name-mobile-back-cover/#webpage","url":"https://sayyes.pk/product/say-my-name-mobile-back-cover/","name":"SAY MY NAME MOBILE BACK COVER - Oh Yes","isPartOf":{"@id":"https://sayyes.pk/#website"},"primaryImageOfPage":{"@id":"https://sayyes.pk/product/say-my-name-mobile-back-cover/#primaryimage"},"datePublished":"2020-05-29T09:48:01+00:00","dateModified":"2021-11-29T08:13:54+00:00","breadcrumb":{"@id":"https://sayyes.pk/product/say-my-name-mobile-back-cover/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://sayyes.pk/product/say-my-name-mobile-back-cover/"]}]},{"@type":"BreadcrumbList","@id":"https://sayyes.pk/product/say-my-name-mobile-back-cover/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sayyes.pk/"},{"@type":"ListItem","position":2,"name":"Shop","item":"https://sayyes.pk/shop/"},{"@type":"ListItem","position":3,"name":"SAY MY NAME MOBILE BACK COVER"}]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Oh Yes &raquo; Feed" href="https://sayyes.pk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Oh Yes &raquo; Comments Feed" href="https://sayyes.pk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Oh Yes &raquo; SAY MY NAME MOBILE BACK COVER Comments Feed" href="https://sayyes.pk/product/say-my-name-mobile-back-cover/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/sayyes.pk\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.5"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='woostify-fonts-css'  href='//fonts.googleapis.com/css?family=Poppins&#038;ver=1.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://sayyes.pk/wp-includes/css/dist/block-library/style.min.css?ver=5.8.5' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+#start-resizable-editor-section{display:none}.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}#end-resizable-editor-section{display:none}
+</style>
+<link rel='stylesheet' id='mediaelement-css'  href='https://sayyes.pk/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='https://sayyes.pk/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-vendors-style-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=7.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=7.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ae-pro-css-css'  href='https://sayyes.pk/wp-content/plugins/anywhere-elementor-pro/includes/assets/css/ae-pro.min.css?ver=2.20.4' type='text/css' media='all' />
+<link rel='stylesheet' id='leopards-courier-ui-css-css'  href='https://sayyes.pk/wp-content/plugins/leopards-courier/assets/css/lcs-front.css?ver=5.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='ppom-tooltip-lib-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/backend/assets/tooltip/tooltip.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ppom-main-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/css/ppom-style.css?ver=24.9' type='text/css' media='all' />
+<link rel='stylesheet' id='ppom-sm-popup-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/css/ppom-simple-popup.css?ver=24.9' type='text/css' media='all' />
+<link rel='stylesheet' id='ppom-bootstrap-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/css/bootstrap/bootstrap.css?ver=4.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ppom-bootstrap-modal-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/css/bootstrap/bootstrap.modal.css?ver=4.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css?ver=6.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='photoswipe-default-skin-css'  href='https://sayyes.pk/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css?ver=6.6.1' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='wcct_public_css-css'  href='https://sayyes.pk/wp-content/plugins/finale-woocommerce-sales-countdown-timer-discount/assets/css/wcct_combined.min.css?ver=2.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='vegas-css-css'  href='https://sayyes.pk/wp-content/plugins/anywhere-elementor-pro/includes/assets/lib/vegas/vegas.min.css?ver=2.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cafa3e123-css'  href='https://sayyes.pk/wp-content/uploads/essential-addons-elementor/734e5f942.min.css?ver=1664610062' type='text/css' media='all' />
+<link rel='stylesheet' id='alg-wc-wish-list-css'  href='https://sayyes.pk/wp-content/plugins/wish-list-for-woocommerce/assets/css/alg-wc-wish-list.min.css?ver=220628-80936' type='text/css' media='all' />
+<link rel='stylesheet' id='alg-font-awesome-css'  href='https://use.fontawesome.com/releases/v5.5.0/css/all.css?ver=5.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='alg-wc-wish-list-izitoast-css'  href='https://sayyes.pk/wp-content/plugins/wish-list-for-woocommerce/assets/vendor/izitoast/css/iziToast.min.css?ver=220628-80936' type='text/css' media='all' />
+<link rel='stylesheet' id='woo-variation-swatches-css'  href='https://sayyes.pk/wp-content/plugins/woo-variation-swatches/assets/css/frontend.min.css?ver=1656403769' type='text/css' media='all' />
+<style id='woo-variation-swatches-inline-css' type='text/css'>
+:root {--wvs-single-product-item-width:30px;
+--wvs-single-product-item-height:30px;
+--wvs-single-product-item-font-size:16px}
+</style>
+<link rel='stylesheet' id='woostify-style-css'  href='https://sayyes.pk/wp-content/themes/woostify/style.css?ver=1.9.8' type='text/css' media='all' />
+<style id='woostify-style-inline-css' type='text/css'>
+
+			.main-navigation .mega-menu-inner-wrapper {
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		
+			@media (min-width: 992px) {
+				.woostify-container,
+				.site-boxed-container #view,
+				.site-content-boxed-container .site-content {
+					max-width: 1200px;
+				}
+			}
+		
+			.topbar{
+				background-color: #292f34;
+				padding: 0px 0;
+			}
+			.topbar *{
+				color: #ffffff;
+			}
+		
+			@media ( max-width: 992px ) {
+				.primary-navigation.primary-mobile-navigation + .primary-navigation{
+					display: none;
+				}
+
+				.has-header-layout-1 .wrap-toggle-sidebar-menu {
+					display: block;
+				}
+				.site-header-inner .site-navigation, .site-header-inner .site-search {
+					display: none;
+				}
+				.has-header-layout-1 .sidebar-menu {
+					display: block;
+				}
+				.has-header-layout-1 .site-navigation {
+					text-align: left;
+				}
+				.has-header-layout-3 .header-layout-3 .wrap-toggle-sidebar-menu {
+					display: block !important;
+				}
+				.has-header-layout-3 .header-layout-3 .navigation-box, .has-header-layout-3 .header-layout-3 .left-content {
+					display: none;
+				}
+				.has-header-layout-4 .header-layout-4 .wrap-toggle-sidebar-menu {
+					display: block !important;
+				}
+				.has-header-layout-5 .header-layout-5 .wrap-toggle-sidebar-menu {
+					display: block !important;
+				}
+				.has-header-layout-5 .header-layout-5 .navigation-box, .has-header-layout-5 .header-layout-5 .center-content {
+					display: none;
+				}
+				.site-branding {
+					text-align: center;
+				}
+				.header-layout-6 .wrap-toggle-sidebar-menu, .header-layout-6 .header-content-top .shopping-bag-button {
+					display: block !important;
+				}
+				.header-layout-6 .content-top-right, .header-layout-6 .header-content-bottom {
+					display: none;
+				}
+				.header-layout-8 .content-top-right, .header-layout-8 .header-content-bottom {
+					display: none !important;
+				}
+				.header-layout-8 .wrap-toggle-sidebar-menu, .header-layout-8 .header-search-icon {
+					display: block !important;
+				}
+				.header-layout-8 .header-content-top .site-tools {
+					display: flex !important;
+				}
+				.header-layout-1 .site-branding {
+				    flex: 0 1 auto;
+				}
+				.header-layout-1 .wrap-toggle-sidebar-menu, .header-layout-1 .site-tools {
+				    flex: 1 1 0px;
+				}
+				.site-header-inner .site-navigation, .site-header-inner .site-search {
+					display: none;
+				}
+				.header-layout-1 .wrap-toggle-sidebar-menu,
+				  .header-layout-1 .site-tools {
+				    flex: 1 1 0px;
+				}
+
+				.header-layout-1 .site-branding {
+				    flex: 0 1 auto;
+				}
+
+				.site-header-inner .woostify-container {
+				    padding: 15px;
+				    justify-content: center;
+				}
+
+				.site-header-inner .logo {
+				    max-width: 70%;
+				    margin: 0 auto;
+				}
+
+				.site-tools .header-search-icon,
+				  .site-tools .my-account {
+				    display: none;
+				}
+
+				.site-header .shopping-bag-button {
+				    margin-right: 15px;
+				}
+
+				.has-custom-mobile-logo a:not(.custom-mobile-logo-url) {
+				    display: none;
+				}
+
+				.has-header-transparent.header-transparent-for-mobile .site-header {
+				    position: absolute;
+				}
+
+				.header-layout-1 .wrap-toggle-sidebar-menu,
+				.header-layout-1 .site-tools {
+					flex: 1 1 0px;
+				}
+
+				.header-layout-1 .site-branding {
+				    flex: 0 1 auto;
+				}
+
+				.site-header-inner .woostify-container {
+				    padding: 15px;
+				    justify-content: center;
+				}
+
+				.site-header-inner .logo {
+				    max-width: 70%;
+				    margin: 0 auto;
+				}
+
+				.site-tools .header-search-icon,
+				.site-tools .my-account {
+				    display: none;
+				}
+
+				.has-header-transparent.header-transparent-for-mobile .site-header {
+				    position: absolute;
+				}
+				.sub-mega-menu {
+    				display: none;
+  				}
+  				.site-branding .custom-mobile-logo-url {
+					display: block;
+				}
+
+				.has-custom-mobile-logo.logo-transparent .custom-transparent-logo-url {
+					display: block;
+				}
+			}
+		
+			@media ( min-width: 993px ) {
+				.primary-navigation.primary-mobile-navigation {
+					display: none;
+				}
+
+				.has-header-layout-1 .wrap-toggle-sidebar-menu {
+					display: none;
+				}
+
+				.site-branding .custom-mobile-logo-url {
+					display: none;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation > .menu-item {
+				    display: block;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation > .menu-item > a {
+					padding: 0;
+				}
+
+				.main-navigation .primary-navigation > .menu-item > a {
+				    padding: 20px 0;
+				    margin: 0 20px;
+				    display: flex;
+				    justify-content: space-between;
+				    align-items: center;
+				}
+
+				.main-navigation .primary-navigation > .menu-item {
+				    display: inline-flex;
+				    line-height: 1;
+				    align-items: center;
+				    flex-direction: column;
+				}
+
+				.has-header-layout-1 .sidebar-menu {
+				    display: none;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation .menu-item-has-mega-menu .mega-menu-wrapper {
+				    min-width: auto;
+				    max-width: 100%;
+				    transform: none;
+				    position: static;
+				    box-shadow: none;
+				    opacity: 1;
+				    visibility: visible;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation .sub-menu {
+				    margin-left: 20px !important;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation .sub-menu:not(.sub-mega-menu) {
+				    transition-duration: 0s;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation > .menu-item ul:not(.sub-mega-menu) {
+				    opacity: 1;
+				    visibility: visible;
+				    transform: none;
+				    position: static;
+				    box-shadow: none;
+				    transition-duration: 0s;
+				    min-width: auto;
+				}
+
+				.sidebar-menu .main-navigation .primary-navigation > .menu-item ul:not(.sub-mega-menu) a {
+				    padding-right: 0;
+				    padding-left: 0;
+				}
+
+				.sidebar-menu-open .sidebar-menu .site-navigation {
+    				left: 60px;
+   					right: 60px;
+  				}
+
+				.has-header-transparent.header-transparent-for-desktop .site-header {
+  					position: absolute;
+				}
+
+				.woostify-nav-menu-widget .woostify-toggle-nav-menu-button, .woostify-nav-menu-widget .site-search, .woostify-nav-menu-widget .woostify-nav-menu-account-action {
+				    display: none;
+				}
+
+				.sidebar-menu-open .sidebar-menu .site-navigation {
+				    left: 60px;
+				    right: 60px;
+				}
+
+				.has-header-transparent.header-transparent-for-desktop .site-header {
+				    position: absolute;
+				}
+
+				.has-custom-mobile-logo .custom-mobile-logo-url {
+				    display: none;
+				}
+
+				.main-navigation li {
+					list-style: none;
+				}
+
+				.site-header-inner .site-navigation:last-child .main-navigation {
+				    padding-right: 0;
+			  	}
+
+			  	.main-navigation ul {
+				    padding-left: 0;
+				    margin: 0;
+				}
+
+				.main-navigation .primary-navigation {
+				    font-size: 0;
+				}
+
+				.main-navigation .primary-navigation > .menu-item .sub-menu {
+				    opacity: 0;
+				    visibility: hidden;
+				    position: absolute;
+				    top: 110%;
+				    left: 0;
+				    margin-left: 0;
+				    min-width: 180px;
+				    text-align: left;
+				    z-index: -1;
+				}
+
+				.main-navigation .primary-navigation > .menu-item .sub-menu .menu-item-has-children .menu-item-arrow {
+				    transform: rotate(-90deg);
+				}
+
+				.main-navigation .primary-navigation > .menu-item .sub-menu a {
+				    padding: 10px 0 10px 20px;
+				    display: flex;
+				    justify-content: space-between;
+				    align-items: center;
+				}
+				.main-navigation .primary-navigation > .menu-item .sub-menu a.tinvwl_add_to_wishlist_button, .main-navigation .primary-navigation > .menu-item .sub-menu a.woocommerce-loop-product__link, .main-navigation .primary-navigation > .menu-item .sub-menu a.loop-add-to-cart-btn {
+				    padding: 0;
+				    justify-content: center;
+				    border-radius: 0;
+				}
+
+				.main-navigation .primary-navigation > .menu-item .sub-menu a.tinvwl_add_to_wishlist_button:hover, .main-navigation .primary-navigation > .menu-item .sub-menu a.woocommerce-loop-product__link:hover, .main-navigation .primary-navigation > .menu-item .sub-menu a.loop-add-to-cart-btn:hover {
+				    background-color: transparent;
+				}
+
+				.main-navigation .primary-navigation > .menu-item .sub-menu a:hover {
+				    background: rgba(239, 239, 239, 0.28);
+				}
+
+				.main-navigation .primary-navigation .menu-item {
+				    position: relative;
+				}
+
+				.main-navigation .primary-navigation .menu-item:hover > .sub-menu {
+				    pointer-events: auto;
+				    opacity: 1;
+				    visibility: visible;
+				    top: 100%;
+				    z-index: 999;
+				    -webkit-transform: translateY(0px);
+				    transform: translateY(0px);
+				}
+
+				.main-navigation .primary-navigation .sub-menu {
+				    pointer-events: none;
+				    background-color: #fff;
+				    -webkit-box-shadow: 0 2px 8px 0 rgba(125, 122, 122, 0.2);
+				    box-shadow: 0 2px 8px 0 rgba(125, 122, 122, 0.2);
+				    border-radius: 4px;
+				    -webkit-transition-duration: 0.2s;
+				    transition-duration: 0.2s;
+				    -webkit-transform: translateY(10px);
+				    transform: translateY(10px);
+				}
+
+				.main-navigation .primary-navigation .sub-menu > .menu-item > .sub-menu {
+				    -webkit-transform: translateY(0px);
+				    transform: translateY(0px);
+				    top: 0;
+				    left: 110%;
+				}
+
+				.main-navigation .primary-navigation .sub-menu > .menu-item:hover > .sub-menu {
+				    left: 100%;
+				}
+
+				.has-header-layout-1 .wrap-toggle-sidebar-menu {
+				    display: none;
+				}
+
+				.has-header-layout-1 .site-navigation {
+				    flex-grow: 1;
+				    text-align: right;
+				}
+
+				.has-header-layout-1 .site-navigation .site-search:not(.woostify-search-form-widget),
+				  .has-header-layout-1 .site-navigation .mobile-my-account {
+				    display: none;
+				}
+			}
+		
+			body, select, button, input, textarea{
+				font-family: Poppins;
+				font-weight: 400;
+				line-height: 28px;
+				text-transform: none;
+				font-size: 14px;
+				color: #8f8f8f;
+			}
+
+			.pagination a,
+			.pagination a,
+			.woocommerce-pagination a,
+			.woocommerce-loop-product__category a,
+			.woocommerce-loop-product__title,
+			.price del,
+			.stars a,
+			.woocommerce-review-link,
+			.woocommerce-tabs .tabs li:not(.active) a,
+			.woocommerce-cart-form__contents .product-remove a,
+			.comment-body .comment-meta .comment-date,
+			.woostify-breadcrumb a,
+			.breadcrumb-separator,
+			#secondary .widget a,
+			.has-woostify-text-color,
+			.button.loop-add-to-cart-icon-btn,
+			.loop-wrapper-wishlist a,
+			#order_review .shop_table .product-name {
+				color: #8f8f8f;
+			}
+
+			.loop-wrapper-wishlist a:hover,
+			.price_slider_wrapper .price_slider,
+			.has-woostify-text-background-color{
+				background-color: #8f8f8f;
+			}
+
+			.elementor-add-to-cart .quantity {
+				border: 1px solid #8f8f8f;
+			}
+
+			.product .woocommerce-loop-product__title{
+				font-size: 14px;
+			}
+		
+			.primary-navigation a{
+				font-family: Poppins;
+				text-transform: none;
+			}
+
+			.primary-navigation > li > a,
+			.primary-navigation .sub-menu a {
+				font-weight: 500;
+			}
+
+			.primary-navigation > li > a{
+				font-size: 14px;
+				line-height: 50px;
+				color: #2b2b2b;
+			}
+
+			.primary-navigation .sub-menu a{
+				line-height: 24px;
+				font-size: 12px;
+				color: #2b2b2b;
+			}
+
+			.site-tools .tools-icon {
+				color: #2b2b2b;
+			}
+			.site-tools .tools-icon .woostify-header-total-price {
+				font-family: Poppins;
+				font-size: 14px;
+				color: #2b2b2b;
+			}
+		
+			h1, h2, h3, h4, h5, h6{
+				font-family: Poppins;
+				font-weight: 700;
+				text-transform: none;
+				line-height: 1.5;
+				color: #2b2b2b;
+			}
+			h1,
+			.has-woostify-heading-1-font-size{
+				font-size: 48px;
+			}
+			h2,
+			.has-woostify-heading-2-font-size{
+				font-size: 36px;
+			}
+			h3,
+			.has-woostify-heading-3-font-size{
+				font-size: 30px;
+			}
+			h4,
+			.has-woostify-heading-4-font-size{
+				font-size: 28px;
+			}
+			h5,
+			.has-woostify-heading-5-font-size{
+				font-size: 26px;
+			}
+			h6,
+			.has-woostify-heading-6-font-size{
+				font-size: 18px;
+			}
+
+			.product-loop-meta .price,
+			.variations label,
+			.woocommerce-review__author,
+			.button[name="apply_coupon"],
+			.quantity .qty,
+			.form-row label,
+			.select2-container--default .select2-selection--single .select2-selection__rendered,
+			.form-row .input-text:focus,
+			.wc_payment_method label,
+			.shipping-methods-modified-label,
+			.woocommerce-checkout-review-order-table thead th,
+			.woocommerce-checkout-review-order-table .product-name,
+			.woocommerce-thankyou-order-details strong,
+			.woocommerce-table--order-details th,
+			.woocommerce-table--order-details .amount,
+			.wc-breadcrumb .woostify-breadcrumb,
+			.sidebar-menu .primary-navigation .arrow-icon,
+			.default-widget a strong:hover,
+			.woostify-subscribe-form input,
+			.woostify-shop-category .elementor-widget-image .widget-image-caption,
+			.shop_table_responsive td:before,
+			.dialog-search-title,
+			.cart-collaterals th,
+			.woocommerce-mini-cart__total strong,
+			.woocommerce-form-login-toggle .woocommerce-info a,
+			.woocommerce-form-coupon-toggle .woocommerce-info a,
+			.has-woostify-heading-color,
+			.woocommerce-table--order-details td,
+			.woocommerce-table--order-details td.product-name a,
+			.has-distraction-free-checkout .site-header .site-branding:after,
+			.woocommerce-cart-form__contents thead th,
+			#order_review .shop_table th,
+			#order_review .shop_table th.product-name,
+			#order_review .shop_table .product-quantity {
+				color: #2b2b2b;
+			}
+
+			.has-woostify-heading-background-color{
+				background-color: #2b2b2b;
+			}
+
+			.variations label{
+				font-weight: 700;
+			}
+		
+			.cart-sidebar-content .woocommerce-mini-cart__buttons a:not(.checkout),
+			.product-loop-meta .button,
+			.multi-step-checkout-button[data-action="back"],
+			.review-information-link,
+			a{
+				color: #2b2b2b;
+			}
+
+			.woostify-icon-bar span{
+				background-color: #2b2b2b;
+			}
+		
+			.woostify-button-color,
+			.loop-add-to-cart-on-image+.added_to_cart {
+				color: #ffffff;
+			}
+
+			.woostify-button-bg-color,
+			.woocommerce-cart-form__contents:not(.elementor-menu-cart__products) .actions .coupon [name="apply_coupon"],
+			.loop-add-to-cart-on-image+.added_to_cart {
+				background-color: #ffdd02;
+			}
+
+			.woostify-button-hover-color,
+			.button[name="apply_coupon"]:hover{
+				color: #ffffff;
+			}
+
+			.woostify-button-hover-bg-color,
+			.loop-add-to-cart-on-image+.added_to_cart:hover,
+			.button.loop-add-to-cart-icon-btn:hover,
+			.product-loop-action .yith-wcwl-add-to-wishlist:hover,
+			.product-loop-action .yith-wcwl-wishlistaddedbrowse.show,
+			.product-loop-action .yith-wcwl-wishlistexistsbrowse.show,
+			.product-loop-action .added_to_cart,
+			.product-loop-image-wrapper .tinv-wraper .tinvwl_add_to_wishlist_button:hover {
+				background-color: #3a3a3a;
+			}
+
+			@media (min-width: 992px) {
+				.main-navigation .primary-navigation > .menu-item ul:not(.sub-mega-menu) a.tinvwl_add_to_wishlist_button:hover {
+					background-color: #3a3a3a;
+				}
+			}
+
+			.button,
+			.woocommerce-widget-layered-nav-dropdown__submit,
+			.form-submit .submit,
+			.elementor-button-wrapper .elementor-button,
+			.has-woostify-contact-form input[type="submit"],
+			#secondary .widget a.button,
+			.product-loop-meta.no-transform .button,
+			.product-loop-meta.no-transform .added_to_cart{
+				background-color: #ffdd02;
+				color: #ffffff;
+				border-radius: 50px;
+			}
+
+			.cart:not(.elementor-menu-cart__products) .quantity,
+			.loop-add-to-cart-on-image+.added_to_cart{
+				border-radius: 50px;
+			}
+
+			.button:hover,
+			.single_add_to_cart_button.button:not(.woostify-buy-now):hover,
+			.woocommerce-widget-layered-nav-dropdown__submit:hover,
+			#commentform input[type="submit"]:hover,
+			.form-submit .submit:hover,
+			#secondary .widget a.button:hover,
+			.woostify-contact-form input[type="submit"]:hover,
+			.loop-add-to-cart-on-image+.added_to_cart:hover,
+			.product-loop-meta.no-transform .button:hover,
+			.product-loop-meta.no-transform .added_to_cart:hover{
+				background-color: #3a3a3a;
+				color: #ffffff;
+			}
+
+			.select2-container--default .select2-results__option--highlighted[aria-selected],
+			.select2-container--default .select2-results__option--highlighted[data-selected]{
+				background-color: #ffdd02 !important;
+			}
+
+			@media ( max-width: 600px ) {
+				.woocommerce-cart-form__contents [name="update_cart"] {
+					background-color: #ffdd02;
+					filter: grayscale(100%);
+				}
+				.woocommerce-cart-form__contents [name="update_cart"],
+				.woocommerce-cart-form__contents .coupon button {
+					color: #ffffff;
+				}
+			}
+		
+			.woostify-theme-color,
+			.primary-navigation li.current-menu-item > a,
+			.primary-navigation > li.current-menu-ancestor > a,
+			.primary-navigation > li.current-menu-parent > a,
+			.primary-navigation > li.current_page_parent > a,
+			.primary-navigation > li.current_page_ancestor > a,
+			.woocommerce-cart-form__contents tbody .product-subtotal,
+			.woocommerce-checkout-review-order-table .order-total,
+			.woocommerce-table--order-details .product-name a,
+			.primary-navigation a:hover,
+			.primary-navigation .menu-item-has-children:hover > a,
+			.default-widget a strong,
+			.woocommerce-mini-cart__total .amount,
+			.woocommerce-form-login-toggle .woocommerce-info a:hover,
+			.woocommerce-form-coupon-toggle .woocommerce-info a:hover,
+			.has-woostify-primary-color,
+			.blog-layout-grid .site-main .post-read-more a,
+			.site-footer a:hover,
+			.woostify-simple-subsbrice-form input[type="submit"],
+			.woocommerce-tabs li.active a,
+			#secondary .widget .current-cat > a,
+			#secondary .widget .current-cat > span,
+			.site-tools .header-search-icon:hover,
+			.product-loop-meta .button:hover,
+			#secondary .widget a:not(.tag-cloud-link):hover,
+			.cart-sidebar-content .woocommerce-mini-cart__buttons a:not(.checkout):hover,
+			.product-nav-item:hover > a,
+			.product-nav-item .product-nav-item-price,
+			.woocommerce-thankyou-order-received,
+			.site-tools .tools-icon:hover,
+			.tools-icon.my-account:hover > a,
+			.multi-step-checkout-button[data-action="back"]:hover,
+			.review-information-link:hover,
+			.has-multi-step-checkout .multi-step-item,
+			#secondary .chosen a,
+			#secondary .chosen .count,
+			.cart_totals .shop_table .woocommerce-Price-amount,
+			#order_review .shop_table .woocommerce-Price-amount,
+			a:hover{
+				color: #ffdd02;
+			}
+
+			.onsale,
+			.pagination li .page-numbers.current,
+			.woocommerce-pagination li .page-numbers.current,
+			.tagcloud a:hover,
+			.price_slider_wrapper .ui-widget-header,
+			.price_slider_wrapper .ui-slider-handle,
+			.cart-sidebar-head .shop-cart-count,
+			.wishlist-item-count,
+			.shop-cart-count,
+			.sidebar-menu .primary-navigation a:before,
+			.woocommerce-message,
+			.woocommerce-info,
+			#scroll-to-top,
+			.woocommerce-store-notice,
+			.has-woostify-primary-background-color,
+			.woostify-simple-subsbrice-form input[type="submit"]:hover,
+			.has-multi-step-checkout .multi-step-item .item-text:before,
+			.has-multi-step-checkout .multi-step-item:before,
+			.has-multi-step-checkout .multi-step-item:after,
+			.has-multi-step-checkout .multi-step-item.active:before,
+			.woostify-single-product-stock .woostify-single-product-stock-progress-bar {
+				background-color: #ffdd02;
+			}
+
+			.woocommerce-thankyou-order-received,
+			.woostify-lightbox-button:hover,
+			.photoswipe-toggle-button:hover {
+				border-color: #ffdd02;
+			}
+
+			/* Fix issue not showing on IE - Must use single line css */
+			.woostify-simple-subsbrice-form:focus-within input[type="submit"]{
+				background-color: #ffdd02;
+			}
+		
+			.site-header-inner{
+				background-color: #ffffff;
+			}
+		
+				.page-header{
+					padding-top: 50px;
+					padding-bottom: 50px;
+					margin-bottom: 50px;
+					background-color: #f2f2f2;
+				}
+
+				.page-header .entry-title{
+					color: #4c4c4c;
+				}
+
+				.woostify-breadcrumb,
+				.woostify-breadcrumb a{
+					color: #606060;
+				}
+			
+			@media (min-width: 992px) {
+
+				.has-sidebar:not(.offcanvas-sidebar) #secondary {
+				width: 20%;
+				}
+
+				.has-sidebar:not(.offcanvas-sidebar) #primary {
+					width: calc( 100% - 20%);
+				}
+			}
+		
+			.site-footer{
+				margin-top: 100px;
+			}
+
+			.site-footer a{
+				color: #8f8f8f;
+			}
+
+			.site-footer{
+				background-color: #eeeeec;
+				color: #8f8f8f;
+			}
+
+			.site-footer .widget-title,
+			.woostify-footer-social-icon a{
+				color: #2b2b2b;
+			}
+
+			.woostify-footer-social-icon a:hover{
+				background-color: #2b2b2b;
+			}
+
+			.woostify-footer-social-icon a {
+				border-color: #2b2b2b;
+			}
+
+			#scroll-to-top {
+				border-radius: 0px;
+			}
+		
+			.woostify-sticky-footer-bar {
+				background: #ffffff;
+			}
+			.woostify-sticky-footer-bar .woostify-item-list-item__icon .woositfy-sfb-icon svg,
+			.woostify-sticky-footer-bar .woostify-item-list-item__icon .woositfy-sfb-icon svg path {
+				color: #111111;
+				fill: #111111;
+			}
+			.woostify-sticky-footer-bar .woostify-item-list__item a:hover .woostify-item-list-item__icon .woositfy-sfb-icon svg,
+			 .woostify-sticky-footer-bar .woostify-item-list__item a:hover .woostify-item-list-item__icon .woositfy-sfb-icon svg path {
+				color: #111111;
+				fill: #111111;
+			}
+			.woostify-sticky-footer-bar .woostify-item-list-item__name {
+				color: #111111;
+				font-weight: 600;
+			}
+			.woostify-sticky-footer-bar .woostify-item-list__item a:hover .woostify-item-list-item__name {
+				color: #111111;
+			}
+		
+			@media ( min-width: 992px ) {
+				.woostify-sticky-footer-bar {
+					padding: 10px 0 10px 0;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__icon .woositfy-sfb-icon svg {
+					width: 20px;
+					height: 20px;
+				}
+				.woostify-sticky-footer-bar ul.woostify-item-list li.woostify-item-list__item a .woostify-item-list-item__icon {
+					margin-bottom: 5px;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__name {
+					font-size: 13px;
+				}
+			}
+			@media ( min-width: 768px ) and ( max-width: 991px ) {
+				.woostify-sticky-footer-bar {
+					padding: 10px 0 10px 0;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__icon .woositfy-sfb-icon svg {
+					width: 20px;
+					height: 20px;
+				}
+				.woostify-sticky-footer-bar ul.woostify-item-list li.woostify-item-list__item a .woostify-item-list-item__icon {
+					margin-bottom: 5px;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__name {
+					font-size: 13px;
+				}
+			}
+			@media ( max-width: 767px ) {
+				.woostify-sticky-footer-bar {
+					padding: 10px 0 10px 0;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__icon .woositfy-sfb-icon svg {
+					width: 18px;
+					height: 18px;
+				}
+				.woostify-sticky-footer-bar ul.woostify-item-list li.woostify-item-list__item a .woostify-item-list-item__icon {
+					margin-bottom: 5px;
+				}
+				.woostify-sticky-footer-bar .woostify-item-list-item__name {
+					font-size: 12px;
+				}
+			}
+			
+			#scroll-to-top:before {
+				font-size: 17px;
+			}
+
+			#scroll-to-top {
+				bottom: 20px;
+				background-color: ;
+				color: ;
+			}
+
+			@media (min-width: 992px) {
+				#scroll-to-top.scroll-to-top-show-mobile {
+					display: none;
+				}
+			}
+			@media (max-width: 992px) {
+				#scroll-to-top.scroll-to-top-show-desktop {
+					display: none;
+				}
+			}
+		
+			.circle-loading:before,
+			.product_list_widget .remove_from_cart_button:focus:before,
+			.updating-cart.ajax-single-add-to-cart .single_add_to_cart_button:before,
+			.product-loop-meta .loading:before,
+			.updating-cart #shop-cart-sidebar:before {
+				border-top-color: #ffdd02;
+			}
+		
+			.product-loop-wrapper .button,.product-loop-meta.no-transform .button {
+				background-color: ;
+				color: ;
+				border-radius: px;
+			}
+
+			.product-loop-wrapper .button:hover, .product-loop-meta.no-transform .button:hover {
+				background-color: ;
+				color: ;
+			}
+		
+			.onsale {
+				color: #ffffff;
+				background-color: #1346af;
+				border-radius: 0px;
+			}
+		
+			.woostify-out-of-stock-label {
+				color: #ffffff;
+				background-color: #818486;
+				border-radius: 0px;
+			}
+		
+			.single-product .content-top,
+			.product-page-container{
+				background-color:  #f3f3f3;
+			}
+		
+			.single_add_to_cart_button.button:not(.woostify-buy-now){
+				border-radius: px;
+				background-color:  ;
+				color:  ;
+			}
+			.single_add_to_cart_button.button:not(.woostify-buy-now):hover{
+				color:  ;
+				background-color:  ;
+			}
+		
+</style>
+<link rel='stylesheet' id='jetpack_css-css'  href='https://sayyes.pk/wp-content/plugins/jetpack/css/jetpack.css?ver=10.7' type='text/css' media='all' />
+<script type="text/template" id="tmpl-variation-template">
+	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+	<p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script defer type='text/javascript' src='https://stats.wp.com/s-202239.js' id='woocommerce-analytics-js'></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-187957339-1' id='google_gtagjs-js' async></script>
+<script type='text/javascript' id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["sayyes.pk"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-187957339-1", {"anonymize_ip":true});
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://sayyes.pk/wp-json/" /><link rel="alternate" type="application/json" href="https://sayyes.pk/wp-json/wp/v2/product/10352" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sayyes.pk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sayyes.pk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.5" />
+<meta name="generator" content="WooCommerce 6.6.1" />
+<link rel='shortlink' href='https://sayyes.pk/?p=10352' />
+<link rel="alternate" type="application/json+oembed" href="https://sayyes.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsayyes.pk%2Fproduct%2Fsay-my-name-mobile-back-cover%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://sayyes.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsayyes.pk%2Fproduct%2Fsay-my-name-mobile-back-cover%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.77.0" /><!-- HFCM by 99 Robots - Snippet # 1: Google Ads All Page -->
+<!-- Global site tag (gtag.js) - Google Ads: 956964142 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-956964142"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-956964142');
+</script>
+
+<!-- /end HFCM by 99 Robots -->
+<style type='text/css'>img#wpstats{display:none}</style>
+		<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W6ZPV85');</script>
+<!-- End Google Tag Manager --><link rel="icon" href="https://sayyes.pk/wp-content/uploads/2020/08/cropped-82042170_2478640945788173_1089150066419040256_n-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://sayyes.pk/wp-content/uploads/2020/08/cropped-82042170_2478640945788173_1089150066419040256_n-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://sayyes.pk/wp-content/uploads/2020/08/cropped-82042170_2478640945788173_1089150066419040256_n-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://sayyes.pk/wp-content/uploads/2020/08/cropped-82042170_2478640945788173_1089150066419040256_n-270x270.jpg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+				<link rel="profile" href="https://gmpg.org/xfn/11">
+		
+		<meta property="og:title" content="SAY MY NAME MOBILE BACK COVER">
+		<meta property="og:image" content="https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg">
+		</head>
+
+	<body class="product-template-default single single-product postid-10352 wp-embed-responsive theme-woostify woocommerce woocommerce-page woocommerce-no-js woo-variation-swatches wvs-behavior-blur wvs-theme-woostify wvs-show-label wvs-tooltip site-normal-container has-header-layout-1 no-sidebar disabled-sidebar-cart has-gallery-slider-layout ajax-single-add-to-cart elementor-default elementor-kit-11548">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6ZPV85"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+				<div id="view">
+		
+		<div class="topbar">
+			<div class="woostify-container">
+				<div class="topbar-item topbar-left"></div>
+				<div class="topbar-item topbar-center"></div>
+				<div class="topbar-item topbar-right"></div>
+			</div>
+		</div>
+				<header id="masthead" class="site-header header-layout-1">
+			<div class="site-header-inner">
+				<div class="woostify-container">		<a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+				<div class="wrap-toggle-sidebar-menu">
+			<span class="toggle-sidebar-menu-btn woostify-icon-bar">
+				<span></span>			</span>
+		</div>
+				<div class="site-branding">
+			<div class="beta site-title"><a href="https://sayyes.pk/" rel="home">Oh Yes</a></div><span class="site-description">Say Yes to DISCOUNT!</span>		</div>
+		
+		<div class="site-navigation">
+			
+			<nav class="main-navigation" aria-label="Primary navigation">
+				<ul id="menu-main-menu" class="primary-navigation"><li id="menu-item-7497" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-7497"><a href="https://sayyes.pk/product-category/business-decor/"><span class="menu-item-text">Business Decor</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-52"><a href="https://sayyes.pk/product-category/business-decor/office/"><span class="menu-item-text">Office</span></a></li>
+	<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-53"><a href="https://sayyes.pk/product-category/business-decor/school/"><span class="menu-item-text">School</span></a></li>
+</ul>
+</li>
+<li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-45"><a href="https://sayyes.pk/product-category/decals/"><span class="menu-item-text">Decals</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-46"><a href="https://sayyes.pk/product-category/decals/wall-decals/"><span class="menu-item-text">Wall Decals</span><span class="menu-item-arrow arrow-icon"></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-50" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-50"><a href="https://sayyes.pk/product-category/decals/wall-decals/home/"><span class="menu-item-text">Home</span></a></li>
+		<li id="menu-item-51" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51"><a href="https://sayyes.pk/product-category/decals/wall-decals/movies/"><span class="menu-item-text">Movies &amp; Fiction</span></a></li>
+		<li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-48"><a href="https://sayyes.pk/product-category/decals/wall-decals/fifa/"><span class="menu-item-text">Fifa</span></a></li>
+		<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-49"><a href="https://sayyes.pk/product-category/decals/wall-decals/games/"><span class="menu-item-text">Games</span></a></li>
+		<li id="menu-item-47" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-47"><a href="https://sayyes.pk/product-category/decals/wall-decals/cars/"><span class="menu-item-text">Cars &amp; Bikes</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-76"><a href="https://sayyes.pk/product-category/decals/laptop-decals/"><span class="menu-item-text">Laptop Decals</span></a></li>
+	<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-75"><a href="https://sayyes.pk/product-category/decals/car-decals/"><span class="menu-item-text">Car Decals</span></a></li>
+</ul>
+</li>
+<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-67"><a href="https://sayyes.pk/product-category/skins/"><span class="menu-item-text">Skins</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-69" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-69"><a href="https://sayyes.pk/product-category/skins/laptop-skins/"><span class="menu-item-text">Laptop Skins</span><span class="menu-item-arrow arrow-icon"></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-70" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-70"><a href="https://sayyes.pk/product-category/skins/laptop-skins/designer-skins/"><span class="menu-item-text">Designer Skins</span></a></li>
+		<li id="menu-item-71" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-71"><a href="https://sayyes.pk/product-category/skins/laptop-skins/fifa-laptop-skins/"><span class="menu-item-text">Fifa</span></a></li>
+		<li id="menu-item-72" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-72"><a href="https://sayyes.pk/product-category/skins/laptop-skins/prof-laptop/"><span class="menu-item-text">Profession Skins</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-73"><a href="https://sayyes.pk/product-category/skins/mobile-skins/"><span class="menu-item-text">Mobile Skin</span></a></li>
+	<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-68"><a href="https://sayyes.pk/product-category/skins/console-skins/"><span class="menu-item-text">Console Skin</span></a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-has-children menu-item-63"><a href="https://sayyes.pk/product-category/mob-covers/"><span class="menu-item-text">Mobile Covers</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-64" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-64"><a href="https://sayyes.pk/product-category/mob-covers/designer-covers/"><span class="menu-item-text">Designer Cases</span></a></li>
+	<li id="menu-item-66" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-66"><a href="https://sayyes.pk/product-category/mob-covers/prof-covers/"><span class="menu-item-text">Profession Cases</span></a></li>
+	<li id="menu-item-10229" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10229"><a href="https://sayyes.pk/product-category/mob-covers/pubg-mobile/"><span class="menu-item-text">PUBG Cases</span></a></li>
+	<li id="menu-item-9878" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9878"><a href="https://sayyes.pk/product-category/mob-covers/psl-v-2020/"><span class="menu-item-text">PSL V 2020</span></a></li>
+</ul>
+</li>
+<li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-74"><a href="https://sayyes.pk/product-category/stickers/"><span class="menu-item-text">Stickers</span></a></li>
+</ul>			</nav>
+
+					</div>
+		
+		<div class="site-tools">
+
+			
+										<span class="tools-icon header-search-icon ti-search"></span>
+									<div class="tools-icon my-account">
+						<a href="https://sayyes.pk/my-account/" class="tools-icon my-account-icon ti-user"></a>
+
+													<div class="subbox">
+								<ul>
+												<li class="my-account-login"><a href="https://sayyes.pk/my-account/" class="text-center">Login / Register</a></li>
+											</ul>
+							</div>
+											</div>
+											<div class="tools-icon align-center">
+						<div class="woostify-header-total-price ">
+						<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8360;</span>0.00</bdi></span>						</div>
+										<a href="https://sayyes.pk/cart/" class="tools-icon shopping-bag-button ti-shopping-cart cart-icon-rotate">
+						<span class="shop-cart-count ">0</span>
+					</a>
+					</div>		</div>
+		</div>			</div>
+		</header>
+				<div id="content" class="site-content" tabindex="-1">
+		<div class="content-top"><div class="woostify-container"><div class="woocommerce"></div><nav class="woostify-breadcrumb"><span class="item-bread"><a href="https://sayyes.pk">Home</a></span><span class="item-bread delimiter">&#47;</span><span class="item-bread"><a href="https://sayyes.pk/product-category/mob-covers/">Mobile Covers</a></span><span class="item-bread delimiter">&#47;</span><span class="item-bread"><a href="https://sayyes.pk/product-category/mob-covers/designer-covers/">Designer Cases</a></span><span class="item-bread delimiter">&#47;</span><span class="item-bread">SAY MY NAME MOBILE BACK COVER</span></nav>
+		<div class="woostify-product-navigation ">
+							<div class="prev-product-navigation product-nav-item">
+					<a class="product-nav-item-text" href="https://sayyes.pk/product/baba-yaga-mobile-back-cover/"><span class="product-nav-icon ti-arrow-circle-left"></span>Previous</a>
+					<div class="product-nav-item-content">
+						<a class="product-nav-item-link" href="https://sayyes.pk/product/baba-yaga-mobile-back-cover/"></a>
+													<img src="https://sayyes.pk/wp-content/uploads/2020/05/65652347_2318809278438008_8481522878645272576_o-1-150x150.jpg" alt="BABA YAGA">
+												<div class="product-nav-item-inner">
+							<h4 class="product-nav-item-title">BABA YAGA MOBILE BACK COVER</h4>
+							<span class="product-nav-item-price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+						</div>
+					</div>
+				</div>
+							<div class="next-product-navigation product-nav-item">
+					<a class="product-nav-item-text" href="https://sayyes.pk/product/winner-chicken-dinner-mobile-cover/">Next<span class="product-nav-icon ti-arrow-circle-right"></span></a>
+					<div class="product-nav-item-content">
+						<a class="product-nav-item-link" href="https://sayyes.pk/product/winner-chicken-dinner-mobile-cover/"></a>
+						<div class="product-nav-item-inner">
+							<h4 class="product-nav-item-title">WINNER CHICKEN DINNER MOBILE COVER</h4>
+							<span class="product-nav-item-price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+						</div>
+													<img src="https://sayyes.pk/wp-content/uploads/2020/05/65822690_2318060171846252_6671440252122431488_o-1-150x150.jpg" alt="WINNER CHICKEN DINNER">
+											</div>
+				</div>
+					</div>
+		</div></div><div class="woostify-container">
+			<div id="primary" class="content-area">
+			<main id="main" class="site-main">
+			
+					
+			<div class="woocommerce-notices-wrapper"></div><div id="product-10352" class="product type-product post-10352 status-publish first instock product_cat-designer-covers product_cat-designer-covers-mob-covers product_cat-mob-covers has-post-thumbnail shipping-taxable purchasable product-type-simple">
+
+				<div class="product-page-container">
+				<div class="woostify-container">
+				<div class="product-gallery vertical-style  has-loading-effect">
+		
+		<div class="product-images">
+			<div id="product-images">
+				<figure class="image-item ez-zoom">
+					<a href="https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg" data-size="960x960" data-elementor-open-lightbox="no">
+						<img width="600" height="600" src="https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-600x600.jpg" class="attachment-woocommerce_single size-woocommerce_single" alt="SAY MY NAME" loading="lazy" srcset="https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-600x600.jpg 600w, https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-300x300.jpg 300w, https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-150x150.jpg 150w, https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-768x768.jpg 768w, https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1-100x100.jpg 100w, https://sayyes.pk/wp-content/uploads/2020/05/65764667_2318809991771270_4997748280633851904_o-1.jpg 960w" />					</a>
+				</figure>
+							</div>
+
+			<div class="product-group-btns"><button class="photoswipe-toggle-button"><span class="woostify-svg-icon icon-fullscreen"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17">
+<g>
+</g>
+	<path d="M15.996 11.352l0.004 4.648-4.649-0.004 0.001-1 2.94 0.003-5.792-5.791-5.792 5.792 2.94-0.003 0.001 1-4.649 0.003 0.004-4.649 1 0.001-0.003 2.939 5.792-5.791-5.792-5.792 0.003 2.939-1 0.001-0.004-4.648 4.649 0.004-0.001 1-2.94-0.003 5.792 5.792 5.792-5.792-2.94 0.003-0.001-1 4.649-0.004-0.004 4.649-1-0.001 0.003-2.939-5.792 5.791 5.792 5.792-0.003-2.939 1-0.001z" fill="#000000" />
+</svg>
+</span></button></div>		</div>
+
+		
+		<div class="product-thumbnail-images">
+					</div>
+		</div>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+	<!-- Background of PhotoSwipe. 
+		 It's a separate element, as animating opacity is faster than rgba(). -->
+	<div class="pswp__bg"></div>
+
+	<!-- Slides wrapper with overflow:hidden. -->
+	<div class="pswp__scroll-wrap">
+
+		<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+		<!-- don't modify these 3 pswp__item elements, data is added later on. -->
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+
+		<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+		<div class="pswp__ui pswp__ui--hidden">
+
+			<div class="pswp__top-bar">
+
+				<!--  Controls are self-explanatory. Order can be changed. -->
+
+				<div class="pswp__counter"></div>
+
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+				<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+				<!-- element will get class pswp__preloader--active when preloader is running -->
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			</button>
+
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			</button>
+
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div>
+		<div class="product-summary">
+		
+	<div class="summary entry-summary">
+					<h1 class="product_title entry-title"><a href="https://sayyes.pk/product/say-my-name-mobile-back-cover/">SAY MY NAME MOBILE BACK COVER</a></h1>
+		<p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</bdi></span></p>
+<div class="woocommerce-product-details__short-description">
+	<p>Note: Mention your cellphone Model (Samsung, Huawei, Infinix, Oppo, Realme, Apple Phone, Nokia) in the note</p>
+<p>Mobile Cover Specification:</p>
+<p>Silicon Case with Premium Quality.<br />
+Digital Printing<br />
+Customization available</p>
+</div>
+
+	
+	<form class="cart" action="https://sayyes.pk/product/say-my-name-mobile-back-cover/" method="post" enctype='multipart/form-data'>
+		
+<div id="ppom-box-3" class="ppom-wrapper">
+	
+	
+
+	<!-- Display price table before fields -->
+	
+	<!-- Render hidden inputs -->
+	
+<input type="hidden" id="ppom_product_price" value="699">
+
+<!-- it is setting price to be used for dymanic prices in script.js -->
+<input type="hidden" name="ppom[fields][id]" id="ppom_productmeta_id" value="3">
+
+<input type="hidden" name="ppom_product_id" id="ppom_product_id" value="10352">
+
+<!-- Manage conditional hidden fields to skip validation -->
+<input type="hidden" name="ppom[conditionally_hidden]" id="conditionally_hidden">
+
+<!-- Option price hidden input: ppom-price.js -->
+<input type="hidden" name="ppom[ppom_option_price]" id="ppom_option_price">
+
+<input type="hidden" name="ppom_cart_key" value="">
+
+<input type="hidden" name="add-to-cart" value="10352" />
+
+<div id="ppom-price-cloner-wrapper">
+	<span id="ppom-price-cloner">
+		&#8360;<span class="ppom-price"></span>	</span>
+</div>
+	<div class="form-row ppom-rendering-fields align-items-center ppom-section-collapse">
+		
+		
+		<div data-data_name=type_your_mobile_model  data-type="text" class="ppom-field-wrapper ppom-col col-md-12 type_your_mobile_model ppom-wrapper_outer-type_your_mobile_model ppom-id-3 ppom-c-show">
+<div class="form-group ppom-input-type_your_mobile_model" >
+
+	<!-- If title of field exist -->
+			<label class="form-control-label" for="type_your_mobile_model" >Type Your Mobile Model<span class="show_required"> *</span></label>
+	
+	<input 
+		type="text" 
+		name="ppom[fields][type_your_mobile_model]" 
+		id="type_your_mobile_model" 
+		class=" form-control text ppom-input ppom-required" 
+		placeholder="" 
+		autocomplete="off" 
+		data-type="text" 
+		data-data_name="type_your_mobile_model" 
+		data-title="Type Your Mobile Model" 
+		data-price="" 
+		data-onetime="" 
+		data-taxable="" 
+		data-without_tax="" 
+		value="" 
+		 
+
+		data-errormsg=""maxlength=""minlength=""	>
+</div></div>		
+		
+	</div> <!-- end form-row -->
+	
+	
+
+	<!-- Display price table after fields -->
+	<div id="ppom-price-container" class="ppom-price-container-10352"></div>
+
+	
+	<div id="ppom-error-container" class="woocommerce-notices-wrapper"></div>
+	
+	<div style="clear:both"></div>
+	
+</div>  <!-- end ppom-wrapper -->
+			<div class="quantity">
+				<label class="screen-reader-text" for="quantity_6337ef0e9756c">SAY MY NAME MOBILE BACK COVER quantity</label>
+		<input
+			type="number"
+			id="quantity_6337ef0e9756c"
+			class="input-text qty text"
+			step="1"
+			min="1"
+			max=""
+			name="quantity"
+			value="1"
+			title="Qty"
+			size="4"
+			placeholder=""
+			inputmode="numeric"
+			autocomplete="off"
+		/>
+			</div>
+			<input type="hidden" name="add-to-cart" value="10352" />
+		
+		<button type="submit" name="add-to-cart" value="10352" class="single_add_to_cart_button button alt">Add to cart</button>
+
+			</form>
+
+	
+<div class="product_meta">
+
+	
+	
+		<span class="sku_wrapper">SKU: <span class="sku">OH YES-28</span></span>
+
+	
+	<span class="posted_in">Categories: <a href="https://sayyes.pk/product-category/mob-covers/designer-covers/" rel="tag">Designer Cases</a>, <a href="https://sayyes.pk/product-category/mob-covers/designer-covers-mob-covers/" rel="tag">Designer Cases</a>, <a href="https://sayyes.pk/product-category/mob-covers/" rel="tag">Mobile Covers</a></span>
+	
+	
+</div>
+	</div>
+
+			</div>
+					</div>
+		</div>
+		<div class="woostify-container">
+	<div class="woocommerce-tabs wc-tabs-wrapper">
+		<ul class="tabs wc-tabs" role="tablist">
+							<li class="description_tab" id="tab-title-description" role="tab" aria-controls="tab-description">
+					<a href="#tab-description">
+						Description					</a>
+				</li>
+							<li class="reviews_tab" id="tab-title-reviews" role="tab" aria-controls="tab-reviews">
+					<a href="#tab-reviews">
+						Reviews (0)					</a>
+				</li>
+					</ul>
+					<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
+				
+	<h2>Description</h2>
+
+<p>Printed Mobile Case &amp; Covers<br />
+Colorful Mobile Back<br />
+Customized Cover Case for all Mobile Models<br />
+High quality and unique case cover for your phone<br />
+Protects your Phone from scratches, dirt, and bumps<br />
+Made of durable Soft material<br />
+Easily access to all ports, controls, and connectors.<br />
+This case covers the back of your unique phone.</p>
+			</div>
+					<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab" id="tab-reviews" role="tabpanel" aria-labelledby="tab-title-reviews">
+				<div id="reviews" class="woocommerce-Reviews">
+	<div id="comments">
+		<h2 class="woocommerce-Reviews-title">
+			Reviews		</h2>
+
+					<p class="woocommerce-noreviews">There are no reviews yet.</p>
+			</div>
+
+			<div id="review_form_wrapper">
+			<div id="review_form">
+					<div id="respond" class="comment-respond">
+		<span id="reply-title" class="comment-reply-title">Be the first to review &ldquo;SAY MY NAME MOBILE BACK COVER&rdquo; <small><a rel="nofollow" id="cancel-comment-reply-link" href="/product/say-my-name-mobile-back-cover/#respond" style="display:none;">Cancel reply</a></small></span><form action="https://sayyes.pk/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><div class="comment-form-rating"><label for="rating">Your rating&nbsp;<span class="required">*</span></label><select name="rating" id="rating" required>
+						<option value="">Rate&hellip;</option>
+						<option value="5">Perfect</option>
+						<option value="4">Good</option>
+						<option value="3">Average</option>
+						<option value="2">Not that bad</option>
+						<option value="1">Very poor</option>
+					</select></div><p class="comment-form-comment"><label for="comment">Your review&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p><p class="comment-form-author"><label for="author">Name&nbsp;<span class="required">*</span></label><input id="author" name="author" type="text" value="" size="30" required /></p>
+<p class="comment-form-email"><label for="email">Email&nbsp;<span class="required">*</span></label><input id="email" name="email" type="email" value="" size="30" required /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit" /> <input type='hidden' name='comment_post_ID' value='10352' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+				</div>
+		</div>
+	
+	<div class="clear"></div>
+</div>
+			</div>
+		
+			</div>
+
+
+	<section class="related products">
+
+					<h2>Related products</h2>
+				
+				<ul class="products columns-4 tablet-columns-2 mobile-columns-1">
+		
+			
+					<li class="product type-product post-10316 status-publish first instock product_cat-designer-covers product_cat-designer-covers-mob-covers product_cat-mob-covers has-post-thumbnail shipping-taxable purchasable product-type-simple">
+	
+<div data-item_id="10316" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop">
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	        <i class="loading fas fa-sync-alt fa-spin fa-fw"></i>
+	</div>		<div class="product-loop-wrapper">
+		<div class="product-loop-image-wrapper">		<div class="product-loop-action"></div>
+		<a href="https://sayyes.pk/product/ki-farak-mobile-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-loop-image" alt="KI FARAK" loading="lazy" srcset="https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-300x300.jpg 300w, https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-150x150.jpg 150w, https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-768x768.jpg 768w, https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-600x600.jpg 600w, https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1-100x100.jpg 100w, https://sayyes.pk/wp-content/uploads/2020/05/65417461_2318809715104631_3298083937531723776_o-1.jpg 960w" sizes="(max-width: 300px) 100vw, 300px" /></a></div><div class="product-loop-content text-center">		<h2 class="woocommerce-loop-product__title">
+			<a href="https://sayyes.pk/product/ki-farak-mobile-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">KI FARAK MOBILE COVER</a>		</h2>
+		<div class="eael-star-rating star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div><div class="product-loop-meta "><div class="animated-meta">			<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+			<a href="https://sayyes.pk/product/ki-farak-mobile-cover/" data-quantity="1" class="ti-shopping-cart loop-add-to-cart-btn button product_type_simple add_to_cart_button" data-product_id="10316" data-product_sku="OH YES-46" title="Add &ldquo;KI FARAK MOBILE COVER&rdquo; to your cart" rel="nofollow">Select options</a></div></div></div>		</div>
+		</li>
+
+			
+					<li class="product type-product post-10025 status-publish instock product_cat-designer-covers product_cat-designer-covers-mob-covers product_cat-mob-covers has-post-thumbnail shipping-taxable purchasable product-type-simple">
+	
+<div data-item_id="10025" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop">
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	        <i class="loading fas fa-sync-alt fa-spin fa-fw"></i>
+	</div>		<div class="product-loop-wrapper">
+		<div class="product-loop-image-wrapper">		<div class="product-loop-action"></div>
+		<a href="https://sayyes.pk/product/joker-face-mobile-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="https://sayyes.pk/wp-content/uploads/2020/03/2-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-loop-image" alt="Product image" loading="lazy" srcset="https://sayyes.pk/wp-content/uploads/2020/03/2-300x300.jpg 300w, https://sayyes.pk/wp-content/uploads/2020/03/2-150x150.jpg 150w, https://sayyes.pk/wp-content/uploads/2020/03/2-768x768.jpg 768w, https://sayyes.pk/wp-content/uploads/2020/03/2-600x600.jpg 600w, https://sayyes.pk/wp-content/uploads/2020/03/2-100x100.jpg 100w, https://sayyes.pk/wp-content/uploads/2020/03/2.jpg 960w" sizes="(max-width: 300px) 100vw, 300px" /></a></div><div class="product-loop-content text-center">		<h2 class="woocommerce-loop-product__title">
+			<a href="https://sayyes.pk/product/joker-face-mobile-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Joker Face Mobile Cover</a>		</h2>
+		<div class="eael-star-rating star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div><div class="product-loop-meta "><div class="animated-meta">			<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+			<a href="https://sayyes.pk/product/joker-face-mobile-cover/" data-quantity="1" class="ti-shopping-cart loop-add-to-cart-btn button product_type_simple add_to_cart_button" data-product_id="10025" data-product_sku="" title="Add &ldquo;Joker Face Mobile Cover&rdquo; to your cart" rel="nofollow">Select options</a></div></div></div>		</div>
+		</li>
+
+			
+					<li class="product type-product post-9879 status-publish instock product_cat-mob-covers product_cat-psl-v-2020 has-post-thumbnail shipping-taxable purchasable product-type-simple">
+	
+<div data-item_id="9879" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop">
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	        <i class="loading fas fa-sync-alt fa-spin fa-fw"></i>
+	</div>		<div class="product-loop-wrapper">
+		<div class="product-loop-image-wrapper">		<div class="product-loop-action"></div>
+		<a href="https://sayyes.pk/product/psl-v-2020-islamabad-united/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-loop-image" alt="Product image" loading="lazy" srcset="https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-300x300.jpg 300w, https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-150x150.jpg 150w, https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-768x768.jpg 768w, https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-600x600.jpg 600w, https://sayyes.pk/wp-content/uploads/2020/02/Islamabad-100x100.jpg 100w, https://sayyes.pk/wp-content/uploads/2020/02/Islamabad.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></div><div class="product-loop-content text-center">		<h2 class="woocommerce-loop-product__title">
+			<a href="https://sayyes.pk/product/psl-v-2020-islamabad-united/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">PSL V 2020 Islamabad United</a>		</h2>
+		<div class="eael-star-rating star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div><div class="product-loop-meta "><div class="animated-meta">			<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+			<a href="?add-to-cart=9879" data-quantity="1" class="ti-shopping-cart loop-add-to-cart-btn button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="9879" data-product_sku="" title="Add &ldquo;PSL V 2020 Islamabad United&rdquo; to your cart" rel="nofollow">Add to cart</a></div></div></div>		</div>
+		</li>
+
+			
+					<li class="product type-product post-10312 status-publish last instock product_cat-designer-covers product_cat-designer-covers-mob-covers product_cat-mob-covers has-post-thumbnail shipping-taxable purchasable product-type-simple">
+	
+<div data-item_id="10312" data-action="alg-wc-wl-toggle" class="alg-wc-wl-btn add alg-wc-wl-thumb-btn alg-wc-wl-thumb-btn-abs alg-wc-wl-thumb-btn-loop">
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-add">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	<div class="alg-wc-wl-view-state alg-wc-wl-view-state-remove">
+		<i class="fas fa-heart" aria-hidden="true"></i>
+	</div>
+	        <i class="loading fas fa-sync-alt fa-spin fa-fw"></i>
+	</div>		<div class="product-loop-wrapper">
+		<div class="product-loop-image-wrapper">		<div class="product-loop-action"></div>
+		<a href="https://sayyes.pk/product/beautiful-blossoms-designer-mobile-back-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img width="300" height="300" src="https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-300x300.jpg" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-loop-image" alt="Beautiful Blossom" loading="lazy" srcset="https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-300x300.jpg 300w, https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-150x150.jpg 150w, https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-768x768.jpg 768w, https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-600x600.jpg 600w, https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1-100x100.jpg 100w, https://sayyes.pk/wp-content/uploads/2020/05/65393342_2318809488437987_747395064795234304_o-1.jpg 960w" sizes="(max-width: 300px) 100vw, 300px" /></a></div><div class="product-loop-content text-center">		<h2 class="woocommerce-loop-product__title">
+			<a href="https://sayyes.pk/product/beautiful-blossoms-designer-mobile-back-cover/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">Beautiful Blossoms Designer Mobile Back Cover</a>		</h2>
+		<div class="eael-star-rating star-rating"><span style="width:0%">Rated <strong class="rating">0</strong> out of 5</span></div><div class="product-loop-meta "><div class="animated-meta">			<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#8360;</span>699.00</span></span>
+			<a href="https://sayyes.pk/product/beautiful-blossoms-designer-mobile-back-cover/" data-quantity="1" class="ti-shopping-cart loop-add-to-cart-btn button product_type_simple add_to_cart_button" data-product_id="10312" data-product_sku="OH YES-12" title="Add &ldquo;Beautiful Blossoms Designer Mobile Back Cover&rdquo; to your cart" rel="nofollow">Select options</a></div></div></div>		</div>
+		</li>
+
+			
+		</ul>
+
+	</section>
+	</div></div>
+
+
+		
+				</main><!-- #main -->
+		</div><!-- #primary -->
+
+		
+	
+</div>		</div>
+				<footer id="colophon" class="site-footer">
+			<div class="woostify-container">
+
+				
+		<div class="site-info">
+							<div class="site-infor-col">
+					Copyright &copy; 2022 <span class="woostify-site-title">Oh Yes</span> | Powered by <a href="https://woostify.com/">Woostify</a>				</div>
+			
+					</div>
+		
+			</div>
+		</footer>
+				</div>
+		<div class="sidebar-menu">
+		<div class="site-search">
+			<div class="widget woocommerce widget_product_search"><form role="search" method="get" class="woocommerce-product-search" action="https://sayyes.pk/">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
+	<input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+	<button type="submit" value="Search">Search</button>
+	<input type="hidden" name="post_type" value="product" />
+</form>
+</div>		</div>
+		
+		<div class="site-navigation">
+			
+			<nav class="main-navigation" aria-label="Primary navigation">
+				<ul id="menu-main-menu-1" class="primary-navigation"><li id="menu-item-7497" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-7497"><a href="https://sayyes.pk/product-category/business-decor/"><span class="menu-item-text">Business Decor</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-52" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-52"><a href="https://sayyes.pk/product-category/business-decor/office/"><span class="menu-item-text">Office</span></a></li>
+	<li id="menu-item-53" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-53"><a href="https://sayyes.pk/product-category/business-decor/school/"><span class="menu-item-text">School</span></a></li>
+</ul>
+</li>
+<li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-45"><a href="https://sayyes.pk/product-category/decals/"><span class="menu-item-text">Decals</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-46"><a href="https://sayyes.pk/product-category/decals/wall-decals/"><span class="menu-item-text">Wall Decals</span><span class="menu-item-arrow arrow-icon"></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-50" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-50"><a href="https://sayyes.pk/product-category/decals/wall-decals/home/"><span class="menu-item-text">Home</span></a></li>
+		<li id="menu-item-51" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51"><a href="https://sayyes.pk/product-category/decals/wall-decals/movies/"><span class="menu-item-text">Movies &amp; Fiction</span></a></li>
+		<li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-48"><a href="https://sayyes.pk/product-category/decals/wall-decals/fifa/"><span class="menu-item-text">Fifa</span></a></li>
+		<li id="menu-item-49" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-49"><a href="https://sayyes.pk/product-category/decals/wall-decals/games/"><span class="menu-item-text">Games</span></a></li>
+		<li id="menu-item-47" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-47"><a href="https://sayyes.pk/product-category/decals/wall-decals/cars/"><span class="menu-item-text">Cars &amp; Bikes</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-76"><a href="https://sayyes.pk/product-category/decals/laptop-decals/"><span class="menu-item-text">Laptop Decals</span></a></li>
+	<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-75"><a href="https://sayyes.pk/product-category/decals/car-decals/"><span class="menu-item-text">Car Decals</span></a></li>
+</ul>
+</li>
+<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-67"><a href="https://sayyes.pk/product-category/skins/"><span class="menu-item-text">Skins</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-69" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-69"><a href="https://sayyes.pk/product-category/skins/laptop-skins/"><span class="menu-item-text">Laptop Skins</span><span class="menu-item-arrow arrow-icon"></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-70" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-70"><a href="https://sayyes.pk/product-category/skins/laptop-skins/designer-skins/"><span class="menu-item-text">Designer Skins</span></a></li>
+		<li id="menu-item-71" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-71"><a href="https://sayyes.pk/product-category/skins/laptop-skins/fifa-laptop-skins/"><span class="menu-item-text">Fifa</span></a></li>
+		<li id="menu-item-72" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-72"><a href="https://sayyes.pk/product-category/skins/laptop-skins/prof-laptop/"><span class="menu-item-text">Profession Skins</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-73"><a href="https://sayyes.pk/product-category/skins/mobile-skins/"><span class="menu-item-text">Mobile Skin</span></a></li>
+	<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-68"><a href="https://sayyes.pk/product-category/skins/console-skins/"><span class="menu-item-text">Console Skin</span></a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-has-children menu-item-63"><a href="https://sayyes.pk/product-category/mob-covers/"><span class="menu-item-text">Mobile Covers</span><span class="menu-item-arrow arrow-icon"></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-64" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat current-product-ancestor current-menu-parent current-product-parent menu-item-64"><a href="https://sayyes.pk/product-category/mob-covers/designer-covers/"><span class="menu-item-text">Designer Cases</span></a></li>
+	<li id="menu-item-66" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-66"><a href="https://sayyes.pk/product-category/mob-covers/prof-covers/"><span class="menu-item-text">Profession Cases</span></a></li>
+	<li id="menu-item-10229" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10229"><a href="https://sayyes.pk/product-category/mob-covers/pubg-mobile/"><span class="menu-item-text">PUBG Cases</span></a></li>
+	<li id="menu-item-9878" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9878"><a href="https://sayyes.pk/product-category/mob-covers/psl-v-2020/"><span class="menu-item-text">PSL V 2020</span></a></li>
+</ul>
+</li>
+<li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-74"><a href="https://sayyes.pk/product-category/stickers/"><span class="menu-item-text">Stickers</span></a></li>
+</ul>			</nav>
+
+					</div>
+		
+		<div class="sidebar-menu-bottom">
+			
+			<ul class="sidebar-account">
+							<li class="my-account-login"><a href="https://sayyes.pk/my-account/" class="text-center">Login / Register</a></li>
+						</ul>
+
+					</div>
+		</div><div id="woostify-overlay"></div>		<span id="scroll-to-top" class="ti-angle-up scroll-to-top-position-right scroll-to-top-show-default" title="Scroll To Top"></span>
+		
+		<div class="site-dialog-search  woostify-search-wrap">
+			<div class="dialog-search-content">
+				
+				<div class="dialog-search-header">
+					<span class="dialog-search-title">Type to search</span>
+					<span class="dialog-search-close-icon ti-close"></span>
+				</div>
+
+				<div class="dialog-search-main">
+					<div class="widget woocommerce widget_product_search"><form role="search" method="get" class="woocommerce-product-search" action="https://sayyes.pk/">
+	<label class="screen-reader-text" for="woocommerce-product-search-field-1">Search for:</label>
+	<input type="search" id="woocommerce-product-search-field-1" class="search-field" placeholder="Search products&hellip;" value="" name="s" />
+	<button type="submit" value="Search">Search</button>
+	<input type="hidden" name="post_type" value="product" />
+</form>
+</div>				</div>
+
+							</div>
+		</div>
+					<div id="shop-cart-sidebar">
+				<div class="cart-sidebar-head">
+					<h4 class="cart-sidebar-title">Shopping cart</h4>
+					<span class="shop-cart-count">0</span>
+					<button id="close-cart-sidebar-btn" class="ti-close"></button>
+				</div>
+
+				<div class="cart-sidebar-content">
+								<p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+							</div>
+			</div>
+		        <script type="text/javascript">
+			var wcct_info = ["Product #10352 SAY MY NAME MOBILE BACK COVER","Running Campaigns: None","Non-running Campaigns: <a href=\"https:\/\/sayyes.pk\/wp-admin\/post.php?post=18153&action=edit\" target=\"_blank\" title=\"SUPER WEEK\">18153<\/a>,<a href=\"https:\/\/sayyes.pk\/wp-admin\/post.php?post=21464&action=edit\" target=\"_blank\" title=\"MC 450RS PD SALE\">21464<\/a>","Discounts: No","Inventory: No","Countdown Timer: No","Counter Bar: No","Unable to see Finale elements? <a target=\"_blank\" href=\"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/?wcct_positions=yes\" title=\"SAY MY NAME MOBILE BACK COVER\">Click here to Troubleshoot Positions<\/a>"];        </script>
+		<script>document.addEventListener('DOMContentLoaded', function () {
+    (() => Array.from(document.getElementsByClassName('spoki-shadowed-button')).forEach(el => {
+        const content = document.importNode(el, true);
+        const shadowRoot = el.attachShadow({mode: 'open'});
+        el.innerHTML = '';
+        el.className = el.className.replace('spoki-shadowed-button', '');
+        const style = document.createElement('style');
+        style.innerHTML = document.getElementById('spoki-style-buttons').innerHTML.replace(/(\\r\\n|\\n|\\r)/gm, '');
+        shadowRoot.appendChild(style);
+        shadowRoot.appendChild(content.firstChild);
+    }))();
+})</script><script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@graph":[{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"Home","@id":"https:\/\/sayyes.pk"}},{"@type":"ListItem","position":2,"item":{"name":"Mobile Covers","@id":"https:\/\/sayyes.pk\/product-category\/mob-covers\/"}},{"@type":"ListItem","position":3,"item":{"name":"Designer Cases","@id":"https:\/\/sayyes.pk\/product-category\/mob-covers\/designer-covers\/"}},{"@type":"ListItem","position":4,"item":{"name":"SAY MY NAME MOBILE BACK COVER","@id":"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/"}}]},{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/#product","name":"SAY MY NAME MOBILE BACK COVER","url":"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/","description":"Note: Mention your cellphone Model (Samsung, Huawei, Infinix, Oppo, Realme, Apple Phone, Nokia) in the note\r\n\r\nMobile Cover Specification:\r\n\r\nSilicon Case with Premium Quality.\r\nDigital Printing\r\nCustomization available","image":"https:\/\/sayyes.pk\/wp-content\/uploads\/2020\/05\/65764667_2318809991771270_4997748280633851904_o-1.jpg","sku":"OH YES-28","offers":[{"@type":"Offer","price":"699.00","priceValidUntil":"2023-12-31","priceSpecification":{"price":"699.00","priceCurrency":"PKR","valueAddedTaxIncluded":"false"},"priceCurrency":"PKR","availability":"http:\/\/schema.org\/InStock","url":"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/","seller":{"@type":"Organization","name":"Oh Yes","url":"https:\/\/sayyes.pk"}}]}]}</script>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" aria-label="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" aria-label="Share"></button>
+				<button class="pswp__button pswp__button--fs" aria-label="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" aria-label="Zoom in/out"></button>
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div>
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" aria-label="Previous (arrow left)"></button>
+			<button class="pswp__button pswp__button--arrow--right" aria-label="Next (arrow right)"></button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type='text/javascript' id='ae-pro-js-js-extra'>
+/* <![CDATA[ */
+var aepro = {"ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","current_url":"https%3A%2F%2Fsayyes.pk%2Fproduct%2Fsay-my-name-mobile-back-cover%2F","breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"plugin_url":"https:\/\/sayyes.pk\/wp-content\/plugins\/anywhere-elementor-pro","queried_page":{"ID":10352,"page_type":"single"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/anywhere-elementor-pro/includes/assets/js/ae-pro.min.js?ver=2.20.4' id='ae-pro-js-js'></script>
+<script type='text/javascript' id='aep-build-js-extra'>
+/* <![CDATA[ */
+var aepro = {"ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","current_url":"https%3A%2F%2Fsayyes.pk%2Fproduct%2Fsay-my-name-mobile-back-cover%2F","breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"plugin_url":"https:\/\/sayyes.pk\/wp-content\/plugins\/anywhere-elementor-pro","queried_page":{"ID":10352,"page_type":"single"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/anywhere-elementor-pro/build/index.js?ver=2.20.4' id='aep-build-js'></script>
+<script type='text/javascript' id='leopards-courier-uijs-js-extra'>
+/* <![CDATA[ */
+var leopards_courier_vars = {"pluginurl":"https:\/\/sayyes.pk\/wp-content\/plugins\/leopards-courier\/","ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","nonce":"83b854da98"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/leopards-courier/assets/js/lcs-ui.js?ver=5.8.5' id='leopards-courier-uijs-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/backend/assets/tooltip/tooltip.js?ver=24.9' id='ppom-tooltip-lib-js'></script>
+<script type='text/javascript' id='PPOM-sm-popup-js-extra'>
+/* <![CDATA[ */
+var ppom_tooltip_vars = {"ppom_tooltip_position":"top","ppom_tooltip_trigger":"","ppom_tooltip_interactive":"","ppom_tooltip_animation":"fade","ppom_tooltip_maxwidth":"500","ppom_tooltip_borderclr":"","ppom_tooltip_bgclr":"","ppom_tooltip_txtclr":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/js/ppom-simple-popup.js?ver=1.0' id='PPOM-sm-popup-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.12.1' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' id='ppom-inputs-js-extra'>
+/* <![CDATA[ */
+var ppom_input_vars = {"ppom_inputs":[{"type":"text","title":"Type Your Mobile Model","data_name":"type_your_mobile_model","description":"","placeholder":"","error_message":"","maxlength":"","minlength":"","default_value":"","price":"","class":"","input_mask":"","width":"12","visibility":"everyone","visibility_role":"","required":"on","conditions":{"visibility":"Show","bound":"All","rules":[{"elements":"","operators":"is","element_values":""}]},"status":"on","ppom_id":"3","field_type":"text"}],"field_meta":[{"type":"text","title":"Type Your Mobile Model","data_name":"type_your_mobile_model","description":"","placeholder":"","error_message":"","maxlength":"","minlength":"","default_value":"","price":"","class":"","input_mask":"","width":"12","visibility":"everyone","visibility_role":"","required":"on","conditions":{"visibility":"Show","bound":"All","rules":[{"elements":"","operators":"is","element_values":""}]},"status":"on","ppom_id":"3","field_type":"text"}],"wc_no_decimal":"2","wc_product_price":"699","wc_product_regular_price":"699","product_title":"SAY MY NAME MOBILE BACK COVER","show_price_per_unit":"","show_option_price":"hide","product_id":"10352","ppom_validate_nonce":"0e7f7c7b94","wc_thousand_sep":",","wc_currency_pos":"left","wc_decimal_sep":".","total_discount_label":"Total Discount","price_matrix_heading":"","product_base_label":"Product Price","option_total_label":"Option Total","fixed_fee_heading":"Fixed Fee","total_without_fixed_label":"Total","product_quantity_label":"Product Quantity","per_unit_label":"unit","text_quantity":"Quantity","is_shortcode":"no","is_mobile":"","tax_prefix":null,"validate_msg":"is a required field","image_max_msg":"You can only select a maximum of","image_min_msg":"You can only select a minimum of","ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/sayyes.pk\/wp-content\/plugins\/woocommerce-product-addon"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/js/ppom.inputs.js?ver=24.9' id='ppom-inputs-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/accounting/accounting.min.js?ver=0.4.2' id='accounting-js'></script>
+<script type='text/javascript' id='ppom-price-js-extra'>
+/* <![CDATA[ */
+var ppom_input_vars = {"ppom_inputs":[{"type":"text","title":"Type Your Mobile Model","data_name":"type_your_mobile_model","description":"","placeholder":"","error_message":"","maxlength":"","minlength":"","default_value":"","price":"","class":"","input_mask":"","width":"12","visibility":"everyone","visibility_role":"","required":"on","conditions":{"visibility":"Show","bound":"All","rules":[{"elements":"","operators":"is","element_values":""}]},"status":"on","ppom_id":"3","field_type":"text"}],"field_meta":[{"type":"text","title":"Type Your Mobile Model","data_name":"type_your_mobile_model","description":"","placeholder":"","error_message":"","maxlength":"","minlength":"","default_value":"","price":"","class":"","input_mask":"","width":"12","visibility":"everyone","visibility_role":"","required":"on","conditions":{"visibility":"Show","bound":"All","rules":[{"elements":"","operators":"is","element_values":""}]},"status":"on","ppom_id":"3","field_type":"text"}],"wc_no_decimal":"2","wc_product_price":"699","wc_product_regular_price":"699","product_title":"SAY MY NAME MOBILE BACK COVER","show_price_per_unit":"","show_option_price":"hide","product_id":"10352","ppom_validate_nonce":"0e7f7c7b94","wc_thousand_sep":",","wc_currency_pos":"left","wc_decimal_sep":".","total_discount_label":"Total Discount","price_matrix_heading":"","product_base_label":"Product Price","option_total_label":"Option Total","fixed_fee_heading":"Fixed Fee","total_without_fixed_label":"Total","product_quantity_label":"Product Quantity","per_unit_label":"unit","text_quantity":"Quantity","is_shortcode":"no","is_mobile":"","tax_prefix":null,"validate_msg":"is a required field","image_max_msg":"You can only select a maximum of","image_min_msg":"You can only select a minimum of","ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/sayyes.pk\/wp-content\/plugins\/woocommerce-product-addon"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce-product-addon/js/price/ppom-price.js?ver=24.9' id='ppom-price-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.6.1' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/sayyes.pk\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.6.1' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js?ver=1.7.21-wc.6.6.1' id='zoom-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js?ver=2.7.2-wc.6.6.1' id='flexslider-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js?ver=4.1.1-wc.6.6.1' id='photoswipe-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=4.1.1-wc.6.6.1' id='photoswipe-ui-default-js'></script>
+<script type='text/javascript' id='wc-single-product-js-extra'>
+/* <![CDATA[ */
+var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=6.6.1' id='wc-single-product-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.6.1' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.6.1' id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_8d8aa7e3c41684e7e3c75ec8eefc7c2e","fragment_name":"wc_fragments_8d8aa7e3c41684e7e3c75ec8eefc7c2e","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.6.1' id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-after'>
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event( 'jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				} );
+			} catch ( e ) {
+				jetpackLazyImagesLoadEvent = document.createEvent( 'Event' )
+				jetpackLazyImagesLoadEvent.initEvent( 'jetpack-lazy-images-load', true, true );
+			}
+			jQuery( 'body' ).get( 0 ).dispatchEvent( jetpackLazyImagesLoadEvent );
+		} );
+		
+</script>
+<script type='text/javascript' id='wcct_public_js-js-extra'>
+/* <![CDATA[ */
+var wcct_data = {"xlwcct_version":"2.15.0","currency":"\u20a8","admin_ajax":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","home_url":"https:\/\/sayyes.pk","log_file":"https:\/\/sayyes.pk\/wp-content\/uploads\/finale-woocommerce-sales-countdown-timer-discount\/force.txt","refresh_timings":"yes","reload_page_on_timer_ends":"yes","l":"NA"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/finale-woocommerce-sales-countdown-timer-discount/assets/js/wcct_combined.min.js?ver=2.15.0' id='wcct_public_js-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/anywhere-elementor-pro/includes/assets/lib/vegas/vegas.min.js?ver=2.4.0' id='vegas-js'></script>
+<script type='text/javascript' id='cafa3e123-js-extra'>
+/* <![CDATA[ */
+var localize = {"ajaxurl":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","nonce":"91babf1c29","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"page_permalink":"https:\/\/sayyes.pk\/product\/say-my-name-mobile-back-cover\/","cart_redirectition":"no","cart_page_url":"https:\/\/sayyes.pk\/cart\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/uploads/essential-addons-elementor/734e5f942.min.js?ver=1664610062' id='cafa3e123-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/wish-list-for-woocommerce/assets/vendor/izitoast/js/iziToast.min.js?ver=220628-80936' id='alg-wc-wish-list-izitoast-js'></script>
+<script type='text/javascript' id='alg-wc-wish-list-js-extra'>
+/* <![CDATA[ */
+var alg_wc_wl = {"ajaxurl":"\/wp-admin\/admin-ajax.php","fa_icons":{"copy":"fas fa-copy"},"error_text":"Sorry, Some error occurred. Please, try again later.","all_removed_text":"All the items have been removed from your wish list."};
+var alg_wc_wl_toggle_btn = {"btn_class":".alg-wc-wl-btn","btn_data_action":"alg-wc-wl-toggle","btn_icon_class":"fas fa-heart","btn_icon_class_added":"fas fa-heart"};
+var alg_wc_wl_ajax = {"action_remove_all":"alg_wc_wl_remove_all_from_wish_list","action_toggle_item":"alg_wc_wl_toggle_item","ajax_action":"alg_wc_wl_get_wish_list","nonce":"9c013c5f89","toggle_item_events":{"default":["mouseup","touchend"],"touchscreen":["mouseup","touchend"]}};
+var alg_wc_wl_notification = {"desktop":"1","mobile":"","ok_button":"","copied_message":"Wish List URL copied to clipboard"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/wish-list-for-woocommerce/assets/js/alg-wc-wish-list.min.js?ver=220628-80936' id='alg-wc-wish-list-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/underscore.min.js?ver=1.13.1' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/wp-util.min.js?ver=5.8.5' id='wp-util-js'></script>
+<script type='text/javascript' id='woo-variation-swatches-js-extra'>
+/* <![CDATA[ */
+var woo_variation_swatches_options = {"show_variation_label":"1","clear_on_reselect":"","variation_label_separator":":","is_mobile":"","show_variation_stock":"","stock_label_threshold":"5","cart_redirect_after_add":"no","enable_ajax_add_to_cart":"yes","cart_url":"https:\/\/sayyes.pk\/cart\/","is_cart":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woo-variation-swatches/assets/js/frontend.min.js?ver=1656403769' id='woo-variation-swatches-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/general.min.js?ver=1.9.8' id='woostify-general-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/navigation.min.js?ver=1.9.8' id='woostify-navigation-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/comment-reply.min.js?ver=5.8.5' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/quantity-button.min.js?ver=1.9.8' id='woostify-quantity-button-js'></script>
+<script type='text/javascript' id='woostify-woocommerce-js-extra'>
+/* <![CDATA[ */
+var woostify_woocommerce_general = {"ajax_url":"https:\/\/sayyes.pk\/wp-admin\/admin-ajax.php","ajax_nonce":"7cb9c6e09e","ajax_error":"Sorry, something went wrong. Please try again!","qty_warning":"Please enter a valid quantity for this product","shipping_text":"Shipping","shipping_next":"Calculated at next step","sticky_top_space":"50","sticky_bottom_space":"50","currency_symbol":"\u20a8","currency_pos":"left","is_active_wvs":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/woocommerce.min.js?ver=1.9.8' id='woostify-woocommerce-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/product-variation.min.js?ver=1.9.8' id='woostify-product-variation-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/lity.min.js?ver=1.9.8' id='lity-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/tiny-slider.min.js?ver=1.9.8' id='tiny-slider-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/flickity.pkgd.min.js?ver=1.9.8' id='woostify-flickity-js'></script>
+<script type='text/javascript' id='woostify-flickity-js-after'>
+			( function () {
+				var touchingCarousel = false,
+				touchStartCoords;
+
+				document.body.addEventListener( "touchstart", function( e ) {
+					if ( e.target.closest( ".flickity-slider" ) ) {
+						touchingCarousel = true;
+					} else {
+						touchingCarousel = false;
+						return;
+					}
+
+					touchStartCoords = {
+						x: e.touches[0].pageX,
+						y: e.touches[0].pageY
+					}
+				});
+
+				document.body.addEventListener( "touchmove" , function(e) {
+					if ( ! ( touchingCarousel && e.cancelable ) ) {
+						return;
+					}
+
+					var moveVector = {
+						x: e.touches[0].pageX - touchStartCoords.x,
+						y: e.touches[0].pageY - touchStartCoords.y
+					};
+
+					if ( Math.abs( moveVector.x ) > 7 )
+						e.preventDefault()
+
+				}, { passive: false } );
+			} ) ();
+			
+</script>
+<script type='text/javascript' id='woostify-product-images-js-extra'>
+/* <![CDATA[ */
+var woostify_product_images_slider_options = {"main":{"container":"#product-images","adaptiveHeight":true,"pageDots":false,"cellAlign":"left","cellSelector":".image-item","wrapAround":true,"contain":true},"thumb":{"container":"#product-thumbnail-images","asNavFor":"#product-images","pageDots":false,"cellAlign":"left","prevNextButtons":false,"contain":true,"groupCells":"60%","freeScroll":false,"wrapAround":true},"next_icon":"<span class=\"woostify-svg-icon icon-angle-right\"><svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n<g>\n<\/g>\n\t<path d=\"M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z\" fill=\"#000000\" \/>\n<\/svg>\n<\/span>","prev_icon":"<span class=\"woostify-svg-icon icon-angle-left\"><svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n<g>\n<\/g>\n\t<path d=\"M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z\" fill=\"#000000\" \/>\n<\/svg>\n<\/span>","vertical_next_icon":"<span class=\"woostify-svg-icon icon-angle-down\"><svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n<g>\n<\/g>\n\t<path d=\"M16.354 5.075l-7.855 7.854-7.853-7.854 0.707-0.707 7.145 7.146 7.148-7.147 0.708 0.708z\" fill=\"#000000\" \/>\n<\/svg>\n<\/span>","vertical_prev_icon":"<span class=\"woostify-svg-icon icon-angle-up\"><svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"17\" height=\"17\" viewBox=\"0 0 17 17\">\n<g>\n<\/g>\n\t<path d=\"M16.354 11.896l-0.707 0.707-7.147-7.146-7.146 7.146-0.707-0.707 7.853-7.853 7.854 7.853z\" fill=\"#000000\" \/>\n<\/svg>\n<\/span>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/product-images.min.js?ver=1.9.8' id='woostify-product-images-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/easyzoom.min.js?ver=1.9.8' id='easyzoom-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/easyzoom-handle.min.js?ver=1.9.8' id='easyzoom-handle-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/photoswipe-init.min.js?ver=1.9.8' id='photoswipe-init-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/woocommerce-sidebar.min.js?ver=1.9.8' id='woostify-woocommerce-sidebar-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination.","woo_variation_swatches_ajax_variation_threshold_min":"30","woo_variation_swatches_ajax_variation_threshold_max":"100","woo_variation_swatches_total_children":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=6.6.1' id='wc-add-to-cart-variation-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-content/themes/woostify/assets/js/woocommerce/ajax-single-add-to-cart.min.js?ver=1.9.8' id='woostify-single-add-to-cart-js'></script>
+<script type='text/javascript' src='https://sayyes.pk/wp-includes/js/wp-embed.min.js?ver=5.8.5' id='wp-embed-js'></script>
+<!-- WooCommerce JavaScript -->
+<script type="text/javascript">
+jQuery(function($) { 
+_wca.push({
+			'_en': 'woocommerceanalytics_product_view',
+			'pi': '10352',
+			'pn': 'SAY MY NAME MOBILE BACK COVER',
+			'pc': 'Designer Cases/Designer Cases/Mobile Covers',
+			'pp': '699',
+			'pt': 'simple','blog_id': '181499358', 'ui': 'null', 'url': 'https://sayyes.pk', 'woo_version': '6.6.1', 'cart_page_contains_cart_block': '0', 'cart_page_contains_cart_shortcode': '1', 'checkout_page_contains_checkout_block': '0', 'checkout_page_contains_checkout_shortcode': '1', 
+		});
+
+jQuery( 'div.woocommerce' ).on( 'click', 'a.remove', function() {
+				var productID = jQuery( this ).data( 'product_id' );
+				var quantity = jQuery( this ).parent().parent().find( '.qty' ).val()
+				var productDetails = {
+					'id': productID,
+					'quantity': quantity ? quantity : '1',
+				};
+				_wca.push( {
+					'_en': 'woocommerceanalytics_remove_from_cart',
+					'pi': productDetails.id,
+					'pq': productDetails.quantity, 'blog_id': '181499358', 'ui': 'null', 'url': 'https://sayyes.pk', 'woo_version': '6.6.1', 'cart_page_contains_cart_block': '0', 'cart_page_contains_cart_shortcode': '1', 'checkout_page_contains_checkout_block': '0', 'checkout_page_contains_checkout_shortcode': '1', 
+				} );
+			} );
+ });
+</script>
+<script src='https://stats.wp.com/e-202239.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.7',blog:'181499358',post:'10352',tz:'5',srv:'sayyes.pk'} ]);
+	_stq.push([ 'clickTrackerInit', '181499358', '10352' ]);
+</script>
+
+</body>
+</html>
+
+<!-- Page generated by LiteSpeed Cache 4.6 on 2022-10-01 12:41:02 -->
