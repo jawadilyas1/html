@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hover and child example</title>
+    </head>
+    <body>
+<div class="hover-example">How are you man</div>
+<ol>
+<li class="first-child-example">FIRST</li>
+<li class="second-child-example">SECOND</li>
+<li class="third-child-example">THIRD</li>
+</ol>
+<style>
+    .hover-example {
+        width: 150px;
+        height: 100px;
+        background-color: blue;
+        color: white;
+    }
+    .hover-example:hover {
+        width: 150px;
+        height: 100px;
+        background-color: chartreuse;
+        color: white;
+    }
+    .second-child-example {
+        color: blue;
+    }
+    .first-child-example:first-child {
+        color: cyan;
+    }
+    .third-child-example {
+        color: darkorange;
+    }
+    
+</style>
+
+    </body>
+</html>
