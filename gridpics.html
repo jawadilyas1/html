@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid pics</title>
+    </head>
+    <body>
+        <div class="flex-container">
+        <div class="grid">
+            <img
+            class="grid-picture"
+            src=images/laptop.jpg alt="" width="700" height="410">
+          
+
+            <img
+            class="grid-picture"
+            src=images/car.jpg alt="" width="700" height="410">
+        
+
+            <img
+            class="grid-picture"
+            src=images/sun.jpg alt="" width="700" height="410">
+
+            <img
+            class="grid-picture"
+            src=images/mobilephone.jpg alt="" width="700" height="410">
+              
+        </div>
+    </div>
+        <style>
+            .grid {
+                display: grid;
+                 grid-template-columns: 1fr 1fr;
+                 row-gap: 20px;
+                  column-gap: 20px;
+                 }
+
+          .grid-picture {
+                        margin: 0;
+                       padding: 0;
+            }
+            .flex-container {
+                border: 1px solid black;
+                width:fit-content;
+                display: flex;
+            }
+        </style>
+    </body>
+</html>
