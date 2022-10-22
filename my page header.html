@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page Header </title>
+    <link rel="stylesheet" href="./news.css" />
+    </head>
+    <body>
+        <div class="my-page">
+        <header class="my-page-header"><h2>JAWAD Blog</h2></header>
+        <div class="my-page-sidebar"><button> Watch on Facebook</button></div>
+        </div>
+        <style>
+
+            body {
+                margin: 0%;
+            }
+            .my-page-header {
+                grid-area: nav-header;
+                background-color:greenyellow;
+                padding: 10px;
+                border:1px solid gray;
+            
+                
+            }
+
+            .my-page-sidebar {
+                grid-area: nav-side;
+                background-color:gray;
+                padding: 10px;
+                margin: 0%;
+            }
+            h2 {
+                color: black;
+                size: 10px;
+            }
+            .my-page {
+                display: grid;
+                grid-template-areas:
+                "nav-header     nav-header        nav-header       nav-side" 
+                ;
+            }
+            button {
+                background-color: darkslateblue;
+                border: 3px solid;
+                width: 200px;
+                height: 40px;
+                color: white;
+
+            }
+        
+
+        </style>
+    </body>
