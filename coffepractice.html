@@ -57,7 +57,36 @@
         </li>
             </ul>
         </section>
+        <section class="payment">
+            <div class="name box box">
+            <h2 class="box-title">Name</h2>
+            <div class="input-group">
+                <label class="user-input-lable" for="name">Name for order</label>
+                <input-type="text" class="user-input" id="CC" />
+            
+            </div> 
+            </div>
+            <div class="payment">
+                <div class="name box box">
+                    <h2 class="box-title">Payment</h2>
+                    <div class="input-group">
+                        <label class="user-input-lable" for="name">Card Number</label>
+                        <input-type="text" class="user-input" id="CC" />
+                    </div>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="name box box">
+                    <div class="input-group">
+                        <label class="user-input-lable" for="name">CCV Number</label>
+                        <input-type="text" class="user-input" id="CC" />
+                    </div>
+                </div>
+        </section>
         <style>
+            * {
+                box-sizing: border-box;
+            }
             .brand {
                 border: 3px solid rgb(75, 35, 3);
                 background-color: rgb(75, 35, 3);
@@ -68,6 +97,9 @@
             }
             body {
                 margin: 0%;
+                padding: 0%;
+                background-color:#efefef;
+                font-family:'open Sans' , Sans-serif;
             }
             .brand {
                 font-family:yellow;
@@ -81,6 +113,40 @@
             }
            .logo{
                 height:  30px ;
+            }
+            .page {
+                display: grid;
+                row-gap: 30px;
+                column-gap: 30px;
+                width: 100%;
+                padding: 30px;
+                margin: 0 auto;
+                grid-template-areas: 
+                "order payment";
+            }
+
+                .box {
+        background-color: #eee1d5;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+        padding: 15px;
+        margin-bottom: 20px;
+       width: 100%;
+      }
+            .box-title {
+                color:  #885a2d;
+                font-weight: normal;
+                font-size:16px;
+            }
+            .items {
+                list-style: none;
+                margin: 0%;
+                padding: 0%;
+            }
+            .item 
+              { border-bottom: #885a2d;
+
+
             }
             
         </style>
